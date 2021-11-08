@@ -20,14 +20,12 @@ class Globo
   }
   void draw()
   {
-    pushStyle();
+    push();
     fill(_col);
-    pushMatrix();
     translate(_x, _y);
     ellipse(0, 0, _d,_d);
     translate(0,_d/2+5);
     triangle(0,-5,-5,0,5,0);
-    popMatrix();
-    popStyle();
+    pop();
   }
 }
