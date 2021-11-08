@@ -3,7 +3,7 @@
 // Ejemplo uso puerto serie. 
 //
 // Este programa está pensado para funcionar con un arduino
-// que esté ejecutando el ejemplo InputPullupSerial, que se puede
+// que esté ejecutando el ejemplo Knock, que se puede
 // ver aquí:
 //
 // https://www.arduino.cc/en/Tutorial/BuiltInExamples/InputPullupSerial  
@@ -11,7 +11,6 @@
 import processing.serial.*;
 ArrayList<Globo> globos;
 Serial myPort;
-int dato=0, datoAnt=0;
 void setup()
 {
   size(displayWidth, displayHeight);
@@ -42,16 +41,12 @@ void mousePressed()
 void serialEvent(Serial p)
 {
   String datoS = p.readString();
-  dato = int(datoS.trim());
-  // Tenemos que hacer esto porque el programa Arduino es muy sencillo. 
-  // Manda constantemente el valor a la entrada a la que está conectada el pulsador. 
-  if (datoAnt == 1)
+  datoS = datoS.trim();
+  //println(datoS);
+  if (datoS.equals("Knock!"))
   {
-    if (dato == 0) {
       creaGlobo(int(random(0,width)),height-100);
-    }
   }
-  datoAnt = dato;
 }
 
 void creaGlobo(int x, int y)
