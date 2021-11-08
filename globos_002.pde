@@ -6,7 +6,7 @@
 // que esté ejecutando el ejemplo Knock, que se puede
 // ver aquí:
 //
-// https://www.arduino.cc/en/Tutorial/BuiltInExamples/InputPullupSerial  
+// https://www.arduino.cc/en/Tutorial/BuiltInExamples/Knock
 
 import processing.serial.*;
 ArrayList<Globo> globos;
