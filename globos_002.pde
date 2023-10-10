@@ -13,11 +13,11 @@ ArrayList<Globo> globos;
 Serial myPort;
 void setup()
 {
-  size(displayWidth, displayHeight);
+  fullScreen();
   background(255, 255, 255);
   globos = new ArrayList<Globo>();
   printArray(Serial.list());
-  myPort = new Serial(this, Serial.list()[4], 9600); 
+  myPort = new Serial(this, Serial.list()[0], 9600); 
   myPort.bufferUntil(10);
   myPort.clear();
 }
